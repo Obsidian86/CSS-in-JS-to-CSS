@@ -1,9 +1,12 @@
+import "normalize-css";
+
 const text = document.getElementById("translate");
 const submit = document.getElementById("submit");
 const outPut = document.getElementById("output");
 
 submit.addEventListener("click", ()=>{
   let value = text.value; 
+
   value = value.replace(/,/g, ";");
   value = value.replace(/"/g, "");
   
@@ -14,16 +17,27 @@ submit.addEventListener("click", ()=>{
     "#": true,
     ";": true,
     "%": true,
-    "-": true
+    "-": true, 
+    "(": true,
+    ")": true,
+    "{": true,
+    "}": true,
+    ".": true,
+    "$": true,
+    "`": true
   }
   
+  const valProcess = (item) => {
+    if(item === '`') return "";
+    if( item === item.toUpperCase() && isNaN(item) && filters[item] === undefined ){ 
+      return("-" + item.toLowerCase()); 
+    } 
+    return item;
+  }
+
   for(let le of value){ 
-    if( 
-        le === le.toUpperCase() 
-        && isNaN(le) 
-        && filters[le] === undefined 
-    ){ le = "-" + le.toLowerCase(); }
-    newString += le;
+    newString += valProcess(le);
   } 
   outPut.innerText = newString;
+  outPut.style.display = "block";
 });

@@ -1,0 +1,23 @@
+{
+  "name": "css-in-js-to-css",
+  "version": "1.0.0",
+  "description": "Personal tool to convert CSS in JS (React style objects) to normal CSS.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Obsidian86/CSS-in-JS-to-CSS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Obsidian86/CSS-in-JS-to-CSS/issues"
+  },
+  "homepage": "https://github.com/Obsidian86/CSS-in-JS-to-CSS#readme",
+  "dependencies": {
+    "normalize-css": "^2.3.1",
+    "parcel": "^1.12.3"
+  }
+}
