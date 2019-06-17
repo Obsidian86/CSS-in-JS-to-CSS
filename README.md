@@ -1,1 +1,1 @@
-# CSS-in-JS-to-CSS
+Personal tool to convert CSS in JS (React style objects) to normal CSS.
