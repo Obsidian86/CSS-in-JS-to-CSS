@@ -4,7 +4,10 @@
   "description": "Personal tool to convert CSS in JS (React style objects) to normal CSS.",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "predeploy": "rm -rf dist && parcel build index.html --public-url /CSS-in-JS-to-CSS",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -17,7 +20,10 @@
   },
   "homepage": "https://github.com/Obsidian86/CSS-in-JS-to-CSS#readme",
   "dependencies": {
-    "normalize-css": "^2.3.1",
-    "parcel": "^1.12.3"
+    "normalize-css": "^2.3.1"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.3",
+    "gh-pages": "^2.0.1"
   }
 }
