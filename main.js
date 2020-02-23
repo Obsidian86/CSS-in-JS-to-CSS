@@ -25,7 +25,7 @@ submit.addEventListener("click", ()=>{
   
   const valProcess = (item) => {
     if(item === '`') return "";
-    if( item === item.toUpperCase() && isNaN(item) && filters[item] === undefined ){ 
+    if( item === item.toUpperCase() && isNaN(item) && filters[item] === undefined ){
       return("-" + item.toLowerCase()); 
     } 
     return item;
@@ -47,6 +47,7 @@ submit.addEventListener("click", ()=>{
     else if (le === ':' && !brackOpen) newString += ''
     else if (le === '"') newString += ''
     else if (le === "'") newString += ''
+    else if (!brackOpen) newString += le
     else newString += valProcess(le);
   } 
   outPut.innerText = newString;

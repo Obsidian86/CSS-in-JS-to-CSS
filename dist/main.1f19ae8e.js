@@ -198,7 +198,7 @@ submit.addEventListener("click", function () {
       if (le === ',') {
         var opt = pertOpen ? ',' : ';';
         newString += opt;
-      } else if (le === ':' && !brackOpen) newString += '';else if (le === '"') newString += '';else if (le === "'") newString += '';else newString += valProcess(le);
+      } else if (le === ':' && !brackOpen) newString += '';else if (le === '"') newString += '';else if (le === "'") newString += '';else if (!brackOpen) newString += le;else newString += valProcess(le);
     }
   } catch (err) {
     _didIteratorError = true;
@@ -246,7 +246,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51109" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52484" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
