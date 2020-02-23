@@ -5,11 +5,7 @@ const submit = document.getElementById("submit");
 const outPut = document.getElementById("output");
 
 submit.addEventListener("click", ()=>{
-  let value = text.value; 
-
-  value = value.replace(/,/g, ";");
-  value = value.replace(/"/g, "");
-  
+  let value = text.value;  
   let newString = "";
   
   const filters = {
@@ -35,8 +31,23 @@ submit.addEventListener("click", ()=>{
     return item;
   }
 
-  for(let le of value){ 
-    newString += valProcess(le);
+  let pertOpen = false
+  let brackOpen = false
+  for(let le of value){
+    if(le === '{') brackOpen = true
+    if(le === '}') brackOpen = false
+
+    if (le === "(") pertOpen = true
+    if (le === ")") pertOpen = false
+
+    if  (le === ',') {
+      const opt = pertOpen ? ',' : ';'
+      newString += opt
+    }
+    else if (le === ':' && !brackOpen) newString += ''
+    else if (le === '"') newString += ''
+    else if (le === "'") newString += ''
+    else newString += valProcess(le);
   } 
   outPut.innerText = newString;
   outPut.style.display = "block";
