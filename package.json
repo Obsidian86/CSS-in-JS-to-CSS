@@ -23,7 +23,7 @@
     "normalize-css": "^2.3.1"
   },
   "devDependencies": {
-    "parcel": "^1.12.3",
+    "parcel": "^2.8.2",
     "gh-pages": "^2.0.1"
   }
 }
